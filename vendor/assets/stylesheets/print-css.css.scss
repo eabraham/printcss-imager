@@ -1,0 +1,6 @@
+@media only print
+{
+  /* hide every element within the body */
+  body * { display: none !important; }
+  canvas { display: block !important; }
+}

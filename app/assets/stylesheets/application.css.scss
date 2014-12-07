@@ -8,13 +8,21 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require alertify
  *= require_self
  *= require_tree .
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
+ @import "print-css";
 
- .form-signin {
+.container {
+  background-color:#FFF;
+}
+
+.form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;

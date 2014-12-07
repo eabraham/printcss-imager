@@ -5,11 +5,11 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="print_css_token" content="6ecddaf59b138673b29dd5e471d6c719">
 </head>
 <body>
-  <div class="container">    
+  <div class="container print-css">    
     <%= render 'layouts/navigation' %>    
-    <%= render 'layouts/alerts' %>
     <%= yield %>
   </div>
 </body>

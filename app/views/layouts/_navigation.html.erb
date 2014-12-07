@@ -1,10 +1,22 @@
 <div class="header">
   <nav>
     <ul class="nav nav-pills pull-right">
-      <li role="presentation" class="active"><a href="#">Plans</a></li>
-      <li role="presentation"><a href="#">Sign In</a></li>
-      <li role="presentation"><a href="#">Sign Up</a></li>
+      <% if !user_signed_in? %>
+      <li role="presentation" class="<%= request.path=="/" ? 'active':''%>"><a href="/">Plans</a></li>
+      <li role="presentation" class="<%= request.path=="/users/login" ? 'active':''%>"><a href="/users/login">Sign In</a></li>
+      <li role="presentation" class="<%= request.path=="/users/sign_up" ? 'active':''%>"><a href="/users/sign_up">Sign Up</a></li>
+      <% else %>
+        <li role="presentation" class="<%= request.path=="/account/instructions" ? 'active':''%>"><a href="/account/instructions">Instructions</a></li>
+        <li role="presentation" class="<%= request.path=="/" ? 'active':''%>"><a href="/users/account">Account</a></li>
+        <li role="presentation" class="<%= request.path=="/users/logout" ? 'active':''%>"><a href="/users/logout">Sign Out</a></li>
+      <% end %>
     </ul>
   </nav>
-  <h3 class="text-muted">Print CSS Imager</h3>
+  <h3 class="">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+    </span>
+    Print CSS Imager
+  </h3>
 </div>

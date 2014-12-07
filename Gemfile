@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-rails'
+gem 'alertify-rails'
 
 gem 'devise'
 
@@ -36,6 +38,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'pry'
+end
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
 

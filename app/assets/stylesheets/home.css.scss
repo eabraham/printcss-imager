@@ -1,7 +1,6 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color:#212E69;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -14,11 +13,17 @@ body {
 
 /* Custom page header */
 .header {
+  background-color:#FFF;
   border-bottom: 1px solid #e5e5e5;
+  .nav {
+    padding-top:20px;
+  }
+
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  padding-bottom: 19px;
+  padding-bottom: 20px;
+  padding-top:20px;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
@@ -34,7 +39,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 700px;
   }
 }
 .container-narrow > hr {
@@ -47,6 +52,7 @@ body {
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+
 }
 
 /* Custom page header */
@@ -72,9 +78,16 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
+.marketing {
+  padding-top:15px;
+  background-color:#FFF;
+  max-width:670px;
+}
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
+  padding-right:10px;
+  padding-left:10px;
 }
 .marketing h2 {
   font-weight: normal;
@@ -89,7 +102,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 40px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -136,7 +149,7 @@ body {
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 0px;
   }
 }
 
