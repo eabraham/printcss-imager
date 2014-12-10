@@ -41,6 +41,9 @@ end
 group :development do
   gem 'pry'
 end
+
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'stripe'
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -18,8 +18,13 @@
  @import "font-awesome";
  @import "print-css";
 
+body, html {
+  height:100%;
+}
+
 .container {
   background-color:#FFF;
+  
 }
 
 .form-signin {

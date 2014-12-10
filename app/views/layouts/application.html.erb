@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PrintCss</title>
+  <title>Print CSS Imager</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
   <%= csrf_meta_tags %>
-  <meta name="print_css_token" content="6ecddaf59b138673b29dd5e471d6c719">
+  <meta name="print_css_token" content="<%= ENV['TEST_ACCOUNT_TOKEN'] %>">
 </head>
 <body>
   <div class="container print-css">    

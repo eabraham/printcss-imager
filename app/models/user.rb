@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :acknowledgement
 
-  before_save :generate_client_token
+  before_create :generate_client_token
   
   private
   def generate_client_token

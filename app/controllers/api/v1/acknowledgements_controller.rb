@@ -3,6 +3,7 @@ class Api::V1::AcknowledgementsController < ApplicationController
 
   def create
     token, host = params[:token], request.host
+
     user = User.find_by(client_token:token, host:host)
     if user
       Acknowledgement.create(ip_address:host,user:user)
