@@ -16,6 +16,10 @@
 </div>
 <% end %>
 <hr class="featurette-divider">
+<% if current_user.client_token %> 
 <div class="row delete-account">
-  <h3 class="col-sm-12">Delete Account</h3>
+  <h3 class="col-sm-12">Cancel Subscription</h3>
+  <%= render "account/cancel_subscription.rb" %>
 </div>
+<hr class="featurette-divider">
+<% end %>

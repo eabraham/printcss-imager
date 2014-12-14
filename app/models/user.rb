@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :acknowledgement
+  has_one :account
 
   before_create :generate_client_token
   

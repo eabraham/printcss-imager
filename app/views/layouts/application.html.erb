@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/railscasts.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <meta name="print_css_token" content="<%= ENV['TEST_ACCOUNT_TOKEN'] %>">
+  <%= csrf_meta_tags %>
+  <script>
+    Stripe.setPublishableKey("<%= ENV['STRIPE_PUBLIC_KEY'] %>");
+  </script>
 </head>
 <body>
   <div class="container print-css">    

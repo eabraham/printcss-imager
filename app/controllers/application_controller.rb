@@ -15,7 +15,7 @@ private
     response.headers['X-Message'] = msg
     response.headers["X-Message-Type"] = flash_type.to_s
 
-    flash.discard # don't want the flash to appear when you reload page
+    #flash.discard # don't want the flash to appear when you reload page
   end
 
   def flash_message
