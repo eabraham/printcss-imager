@@ -3,11 +3,11 @@
     <ul class="nav nav-pills pull-right">
       <% if !user_signed_in? %>
       <li role="presentation" class="<%= request.path=="/" ? 'active':''%>"><a href="/">Plans</a></li>
-      <li role="presentation" class="<%= request.path=="/instruction/index" ? 'active':''%>"><a href="/instruction/index">Instructions</a></li>
+      <li role="presentation" class="<%= request.path=="/instruction" ? 'active':''%>"><a href="/instruction">Instructions</a></li>
       <li role="presentation" class="<%= request.path=="/users/login" ? 'active':''%>"><a href="/users/login">Sign In</a></li>
       <li role="presentation" class="<%= request.path=="/users/sign_up" ? 'active':''%>"><a href="/users/sign_up">Sign Up</a></li>
       <% else %>
-        <li role="presentation" class="<%= request.path=="/instruction/index" ? 'active':''%>"><a href="/instruction/index">Instructions</a></li>
+        <li role="presentation" class="<%= request.path=="/instruction" ? 'active':''%>"><a href="/instruction">Instructions</a></li>
         <li role="presentation" class="<%= request.path=="/" ? 'active':''%>"><a href="/">Account</a></li>
         <li role="presentation" class="<%= request.path=="/users/logout" ? 'active':''%>"><a href="/users/logout">Sign Out</a></li>
       <% end %>

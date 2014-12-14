@@ -1,5 +1,5 @@
 PrintCss::Application.routes.draw do
-  get "instruction/index"
+  get "instruction", :to => "instruction#index"
   resources "account"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
