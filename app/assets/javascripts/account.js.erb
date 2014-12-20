@@ -1,0 +1,65 @@
+jQuery(function($) {
+  var stripeResponseHandler;
+  $("#cardForm").submit(function(event) {
+    var $form;
+    $form = $(this);
+    $form.find("button.update-card").prop("disabled", true);
+    Stripe.card.createToken($form, stripeResponseHandler);
+    return false;
+  });
+  stripeResponseHandler = function(status, response) {
+    var $form, token;
+    $form = $("#cardForm");
+    if (response.error) {
+      $form.find(".payment-errors").text(response.error.message);
+      $form.find("button").prop("disabled", false);
+      alertify.error("Failed to add card. Try again.");
+    } else {
+      token = response.id;
+      $form.append($("<input type=\"hidden\" name=\"stripeToken\" />").val(token));
+      $form.get(0).submit();
+      alertify.success("Card Successfully Added!");
+    }
+  };
+  $("#cancel-sub-form").submit(function(event) {
+    var $form, conf;
+    $form = $(this);
+    $form.find("button.cancel-sub").prop("disabled", true);
+    conf = confirm("Are you sure you want to cancel your subscription?");
+    if (conf === true) {
+      $.ajax({
+        url: '/account/1',
+        type: 'DELETE',
+        success: function() {
+          return alertify.success("Subscription cancelled.");
+        }
+      });
+    } else {
+      $form.find("button").prop("disabled", false);
+    }
+    return false;
+  });
+
+  $("#set-plan-form").submit(function(event) {
+    var $form, conf, planType;
+    $form = $(this);
+    planType = $("#set-plan-form input[type=radio]:checked")[0].value
+    $form.find("button").prop("disabled", true);
+	  $.ajax({
+	    url: '/account/1',
+	    type: 'PUT',
+	    data: JSON.stringify({"plan":planType}),
+	    contentType: "application/json",
+	    success: function(data) {
+	      $form.find("button").prop("disabled", false);
+	      return alertify.success(data["msg"]);
+	    },
+	    error: function(data) {
+	      $form.find("button").prop("disabled", false);
+	      return alertify.error(data.responseJSON['msg']);
+		}
+	  });
+    return false;
+  });
+  return 
+});

@@ -42,6 +42,10 @@ group :development do
   gem 'pry'
 end
 
+group :production do
+  gem 'puma'
+end
+
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'stripe'
 # Use ActiveModel has_secure_password
