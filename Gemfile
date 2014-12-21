@@ -40,6 +40,7 @@ end
 
 group :development do
   gem 'pry'
+  gem 'capistrano'
 end
 
 group :production do
