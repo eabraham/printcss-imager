@@ -1,0 +1,1 @@
+vendor/assets/javascripts/html2canvas.js
