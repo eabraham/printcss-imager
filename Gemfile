@@ -47,6 +47,7 @@ end
 group :production do
   gem 'unicorn'
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'dotenv-rails', :groups => [:development, :test]
