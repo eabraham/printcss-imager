@@ -30,7 +30,7 @@ function authenticatePrintCss(token){
   if (authenticated)
     return true;
   else {
-    $.post("http://localhost:3000/api/v1/acknowledgements", {token:token}, function (data) {
+    $.post("https://evening-oasis-9369.herokuapp.com/api/v1/acknowledgements", {token:token}, function (data) {
       authenticated=true;
     }).fail(function(data) {
       authenticated=false;
