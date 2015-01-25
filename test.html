@@ -1,0 +1,43 @@
+<head>
+  <script>
+    var test = window.matchMedia( "@media print" );
+	function mediaSizeChange(mediaQueryList)
+	{
+	     debugger;
+	    //Executed whenever the media query changes from true to false or vice versa
+	    if(mediaQueryList.matches)
+	    {
+	        alert("Hit");
+	    }else{
+	        
+	    }
+	}
+	test.addListener(mediaSizeChange);
+  </script>
+  <style type="text/css">
+  @media print {
+	  * {
+	  	-webkit-print-color-adjust:exact;
+	  }
+	  html, body {
+	    width: 210mm;
+	    height: 297mm;
+	  }
+	}
+    @page  {
+    	display: list-item;
+	  	list-style-position: inside;
+	    background-image:url("http://taxes.cityofjerseycity.com/Content/Templates/img/JerseyCity_Seal.gif");
+	}
+  </style>
+</head>
+
+<body>
+  <div>
+    Can you see this?
+  </div>
+  <br>
+  <div>
+    Can you see this?
+  </div>
+</body>

@@ -97,6 +97,41 @@ body {
   margin-left: 10px;
 }
 
+.plans {
+  text-align:center;
+  div.main-plan {
+      margin-top:20px;
+      padding:0 0 0 0;
+      table {
+        border-top: 3px solid #d9534f;
+        border-bottom: 3px solid #d9534f;
+        height:160px;
+      }
+  }
+  div {
+    margin-top:33px;
+    padding:0 0 0 0;
+  }
+  table{
+    width:100%;
+    height:147px;
+    border-top: 3px solid #337ab7;
+    border-bottom: 3px solid #337ab7;
+    tr.main-plan {
+      height:76px;
+    }
+    td {
+      border: 1px solid lightgrey;
+      padding:3px;
+    }
+  }
+  
+
+}
+
+
+
+
 
 /* Featurettes
 ------------------------- */

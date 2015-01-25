@@ -5,14 +5,16 @@ env = ENV["RAILS_ENV"] || "development"
  
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete documentation.
 worker_processes 2 # amount of unicorn workers to spin up
- 
-listen "/tmp/printcss_imager.socket"
+
+working_directory "/u/apps/printcss_imager/current"
+
+listen "/tmp/unicorn.printcss_imager.socket"
  
 preload_app true
  
 timeout 30         # restarts workers that hang for 30 seconds
  
-pid "/tmp/unicorn.printcss_imager.pid"
+pid "/u/apps/printcss_imager/pids/unicorn.pid"
  
 if env == "production"
   # Help ensure your application will always spawn in the symlinked

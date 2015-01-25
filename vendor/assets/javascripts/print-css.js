@@ -1,10 +1,19 @@
 var checkPagePrint, pagePrint, removeOldImages, retryOnEmptyPrint, authenticatePrintCss;
 var authenticated;
 
+jQuery.loadScript = function (url, callback) {
+    jQuery.ajax({
+        url: url,
+        dataType: 'script',
+        success: callback,
+        async: true
+    });
+}
+
 pagePrint = function() {
   var valid, ele, token;
   token = $("meta[name=print_css_token]").attr("content");
-  valid = authenticatePrintCss(token);
+  valid = true//authenticatePrintCss(token);
   if (valid){
     ele = $(".print-css");
     html2canvas(ele, {
@@ -62,6 +71,9 @@ removeOldImages = function() {
     ele.remove();
   }
 };
+
+$.loadScript('https://printcssimager/html2canvas.js',function () {});
+$('head').append('<link rel="stylesheet" type="text/css" href="lightbox_stylesheet.css">');
 
 $(window).load(function() {
   //initial page load
