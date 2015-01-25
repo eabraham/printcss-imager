@@ -9,7 +9,7 @@ class Api::V1::AcknowledgementsController < ApplicationController
       Acknowledgement.create(ip_address:host,user:user)
       render nothing:true, status:200
     else
-      render :json=>{"error":"Missing client token, contact support@printcssimager.com for assistance."}, status:401
+      render :json=>{"error"=>"Missing client token, contact support@printcssimager.com for assistance."}, status:401
     end
   end
 end
